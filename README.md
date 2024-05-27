@@ -8,6 +8,8 @@ In this application, you can take lessons in order to learn how to read correctl
 ![Frame 15](https://github.com/alinaavanesyan/dyslexia_app/assets/90269742/577b4e3d-20bf-440a-ac64-0e8ed66e5761)
 
 
+The material for the tasks in this application was generated automatically using various tools: morphological analyzers in Python, the ruGPT3small text generation model trained on Russian texts, as well as the whisper-tiny speech recognition model.
+
 # Installation
 Download the APK-file [here](https://disk.yandex.ru/d/QbKp78ePDQEVJA) (for Android)
 
