@@ -8,7 +8,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_sound_record/flutter_sound_record.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:dyslexia_project/snack_bar.dart';
+import 'package:dyslexia_project/services/snack_bar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import "package:whisper_dart/whisper_dart.dart";
 import 'package:universal_io/io.dart';
