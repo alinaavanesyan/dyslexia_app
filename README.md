@@ -1,4 +1,4 @@
-# dyslexia_app
+#  <center> dyslexia_app </center>
 
 This flutter app is aimed to help children who speak Russian correct dyslexia 🥰
 <br>
