@@ -1,5 +1,5 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
-import 'package:dyslexia_project/snack_bar.dart';
+import 'package:dyslexia_project/services/snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:async';
