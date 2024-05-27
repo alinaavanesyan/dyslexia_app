@@ -1,6 +1,6 @@
 # dyslexia_app
 
-### Installation
+# Installation
 Download the APK-file here (for Android)
 
 
