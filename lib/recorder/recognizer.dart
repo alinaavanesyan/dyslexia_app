@@ -535,8 +535,6 @@ class _CompareTextScreenState extends State<CompareTextScreen> {
 
   loadModel() async {
     final User user = FirebaseAuth.instance.currentUser!;
-
-    // FirebaseStorage.instance.ref().child('models/ggml-tiny2.bin');
     Directory tempDir = await getTemporaryDirectory();
     File downloadToFile = File('${tempDir.path}/model.bin');
     final bytes = await rootBundle.load('./assets/models/ggml-tiny2.bin');
@@ -640,7 +638,7 @@ class _CompareTextScreenState extends State<CompareTextScreen> {
             ),
 
               Positioned(
-                  top: 50,
+                  top: 60,
                   left: 15,
                   child: IconButton(
                       icon: Icon(Icons.arrow_back),
@@ -652,6 +650,7 @@ class _CompareTextScreenState extends State<CompareTextScreen> {
                   )
               ),
 
+              Padding(padding: EdgeInsets.only(top: 70), child:
               SingleChildScrollView(
                 child: ConstrainedBox(
                   constraints: BoxConstraints(
@@ -659,46 +658,46 @@ class _CompareTextScreenState extends State<CompareTextScreen> {
                   .of(context)
                   .size
                   .height,
-              minWidth: MediaQuery
+                    minWidth: MediaQuery
                   .of(context)
                   .size
                   .width,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Center(
-                  child: Padding(
-                    padding: EdgeInsets.all(30),
-                    child: Text('В этом разделе автоматически оценивается ваше произношение', style: TextStyle(fontSize: 18),),
-                )),
-
-                SizedBox(height: 10,),
-
-                Center(
-                    child: Padding(
-                      padding: EdgeInsets.all(30),
-                      child: Text('В случае плохого результата не расстраивайтесь и помните, что машины могут ошибаться', style: TextStyle(fontSize: 18),),
-                    )),
-
-                SizedBox(height: 50,),
-                Visibility(
-                  visible: !is_procces,
-                  replacement: const CircularProgressIndicator(),
-                  child: Row(
+                  ),
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.black,
-                          ),
-                          onPressed: () async {
-                            if (!model.isEmpty) {
-                              Future(() async {
-                                print("Started transcribe");
+                      Center(
+                          child: Padding(padding: EdgeInsets.only(left: 30, right: 30),
+                            child: Text('В этом разделе автоматически оценивается ваше произношение', style: TextStyle(fontSize: 18),),
+                          )),
+
+                      SizedBox(height: 10,),
+
+                      Center(
+                          child: Padding(
+                            padding: EdgeInsets.all(30),
+                            child: Text('В случае плохого результата не расстраивайтесь и помните, что машины могут ошибаться', style: TextStyle(fontSize: 18),),
+                          )),
+
+                      SizedBox(height: 50,),
+
+                      Visibility(
+                        visible: !is_procces,
+                        replacement: const CircularProgressIndicator(),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black,
+                                ),
+                                onPressed: () async {
+                                  if (!model.isEmpty) {
+                                    Future(() async {
+                                      print("Started transcribe");
 
                                 Whisper whisper = Whisper(
                                   whisperLib: "libwhisper.so",
@@ -764,7 +763,7 @@ class _CompareTextScreenState extends State<CompareTextScreen> {
             ),
           ),
         ),
-      ]));
+              )]));
     }
     else {
       return Stack(children: [
