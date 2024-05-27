@@ -1,4 +1,4 @@
-#  <center> dyslexia_app </center>
+#  <div style="text-align: center;">dyslexia_app</div>
 
 This flutter app is aimed to help children who speak Russian correct dyslexia 🥰
 <br>
